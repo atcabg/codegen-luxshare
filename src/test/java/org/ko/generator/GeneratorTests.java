@@ -22,7 +22,20 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class GeneratorTests {
 
     String[] tables = new String[]{
-            "DncDic"
+            "LuxLineQualityAnlz",
+            "LuxLineDefectiveTrend",
+            "LuxCoatingFilm",
+            "LuxOQCQualityAnlzWeek",
+            "LuxOQCQualityAnlzDay",
+            "LuxSaltHazeRecord",
+            "LuxLiquidAnlzLog",
+            "LuxNobleMetalUseAnlz",
+            "LuxDailyInOutAnlz",
+            "LuxWorkEfficiency",
+            "LuxLiquidMedicineLog",
+            "LuxSlotLiquorCare",
+            "LuxStationAlarm",
+            "LuxDeviceCare"
     };
 
     @Test
@@ -50,6 +63,11 @@ public class GeneratorTests {
         createViewModel.executor(tables);
     }
 
+    @Test
+    public void generatorEditViewModel() throws Exception {
+        editViewModel.executor(tables);
+    }
+
     @Autowired
     private EntityGenerator entity;
 
@@ -65,6 +83,9 @@ public class GeneratorTests {
     @Autowired
     private CreateViewModelGenerator createViewModel;
 
+    @Autowired
+    private EditViewModelGenerator editViewModel;
+
     @Before
     public void before () {
         SQLServerDataSource dataSource = GeneratorConf.dataSource();
@@ -73,6 +94,7 @@ public class GeneratorTests {
         jsonModel.dataSource(dataSource);
         requestPayload.dataSource(dataSource);
         createViewModel.dataSource(dataSource);
+        editViewModel.dataSource(dataSource);
     }
 
 }

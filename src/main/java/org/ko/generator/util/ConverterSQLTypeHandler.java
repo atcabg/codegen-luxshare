@@ -26,9 +26,10 @@ public class ConverterSQLTypeHandler {
         container.put("float", "float");
         container.put("double", "double");
         container.put("decimal", "decimal");
-        container.put("date", "date");
-        container.put("datetime2", "date");
-        container.put("timestamp", "date");
+        container.put("date", "DateTime");
+        container.put("datetime2", "DateTime");
+        container.put("datetime", "DateTime");
+        container.put("timestamp", "DateTime");
         container.put("json", "string");
     }
 

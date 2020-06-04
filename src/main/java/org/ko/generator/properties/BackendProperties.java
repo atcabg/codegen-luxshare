@@ -19,6 +19,8 @@ public class BackendProperties {
 
     private String createViewModelTemplate = "CreateViewModel.cs.ftl";
 
+    private String editViewModelTemplate = "EditViewModel.cs.ftl";
+
     public String getControllerTemplate() {
         return controllerTemplate;
     }
@@ -57,5 +59,13 @@ public class BackendProperties {
 
     public void setCreateViewModelTemplate(String createViewModelTemplate) {
         this.createViewModelTemplate = createViewModelTemplate;
+    }
+
+    public String getEditViewModelTemplate() {
+        return editViewModelTemplate;
+    }
+
+    public void setEditViewModelTemplate(String editViewModelTemplate) {
+        this.editViewModelTemplate = editViewModelTemplate;
     }
 }
